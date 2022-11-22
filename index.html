@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+  <title>Cadastro</title>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.maskedinput/1.4.1/jquery.maskedinput.min.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <span>Cadastro de Contato</span>
+    </div>
+
+    <input id="barraPesquisa" type="text" size="25">    
+    <button id="btnFiltro"><font color="white" size="3">Consultar</font></button>
+
+    <div class="divTable">
+      <table id="tabela">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Empresa</th>
+            <th>E-mail</th>
+            <th>Telefone Pessoal</th>
+            <th>Telefone Comercial</th>
+            <th class="acao">Editar</th>
+            <th class="acao">Excluir</th>     
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+      <button onclick="openModal()" id="new">Inserir</i></button>
+
+    </div>
+
+    <div class="modal-container">
+      <div class="modal">
+        <form>
+          <label for="m-nome">Nome</label>
+          <input id="m-nome" type="text" pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+$" required/>
+
+          <label for="m-empresa">Empresa</label>
+          <input id="m-empresa" type="text" required />
+
+          <label for="m-email">E-mail</label>
+          <input id="m-email" type="email" name="email "placeholder="nome@dominio.com" pattern="[a-zA-Z0-9_][_.-@]@[a-z].[com].[br]"/> 
+  
+          <label for="m-tel-pessoal">Telefone Pessoal</label>
+          <input id="m-tel-pessoal" type="tel"/>
+
+          <label for="m-tel-comercial">Telefone Comercial</label>
+          <input id="m-tel-comercial" type="tel"/>
+
+          <button id="btnCadastro">Enviar</button>
+        </form>
+        
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    $("#m-tel-pessoal").mask("(99) 99999-9999");
+    $("#m-tel-comercial").mask("(99) 99999-9999");
+    </script>
+
+  <script src="main.js"></script>
+  
+</body>
+
+</html>
